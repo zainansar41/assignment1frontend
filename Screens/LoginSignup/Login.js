@@ -1,4 +1,4 @@
-import { View, Text, ToastAndroid, ScrollView, ImageBackground, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, ToastAndroid, ScrollView, ImageBackground, StyleSheet, TextInput, TouchableOpacity,Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 import Loginimg from '../../assets/Loginimg.jpg'
@@ -12,11 +12,16 @@ export default function Login({ navigation }) {
   const [email, setEmail] = useState('')
   const [Password, setPassword] = useState('')
 
+  useEffect(()=>{
+    Alert.alert("For Login", "Use \n Email: zain@gmail.com \n Password: 12345")
+
+  },[])
+
   const Login = () => {
     loginroute(email, Password)
       .then((result) => {
         if (result.status === 400) {
-          ToastAndroid.show("Email not found! try Sign UP", ToastAndroid.LONG)
+          ToastAndroid.show("Please Check Your Credentials", ToastAndroid.LONG)
         }
         else {
           global.userID = result.data.user._id
