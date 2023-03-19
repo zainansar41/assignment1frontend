@@ -19,9 +19,10 @@ export default function Login({ navigation }) {
           ToastAndroid.show("Email not found! try Sign UP", ToastAndroid.LONG)
         }
         else {
+          global.userID = result.data.user._id
           ToastAndroid.show("redirecting to Notes", ToastAndroid.LONG)
-
           navigation.navigate("addnote")
+
         }
       })
       .catch((error) => {
@@ -36,8 +37,8 @@ export default function Login({ navigation }) {
           ToastAndroid.show("Email already exists! try Login", ToastAndroid.LONG)
         }
         else {
+          global.userID = result.data.user._id
           ToastAndroid.show("Registration Successfull", ToastAndroid.LONG)
-
           navigation.navigate("addnote")
         }
       })
