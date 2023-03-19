@@ -10,23 +10,23 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="login"
-          component={Login}
-          options={{ headerShown: false}}
-        />
-        <Stack.Screen name="addnote"
-          component={AddNote}
-          options={{ headerShown: false}}
-        />
-        <Stack.Screen name="viewNotes"
-          component={ViewNote}
-          options={{ headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="addnote"
+            component={AddNote}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="viewNotes"
+            component={ViewNote}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 
